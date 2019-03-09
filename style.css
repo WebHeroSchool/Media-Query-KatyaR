@@ -1,0 +1,175 @@
+body {
+  color: white;
+  background-color: lightgray;
+}
+
+p{
+  padding: 10px;
+}
+
+@media (min-width: 320px) {
+  .main__title {
+    font-size: 1.3em;
+  }
+  .header__title {
+    font-size: 1.7em;
+  }
+  .burger-menu {
+    display: block;
+  }
+  .header__nav {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) {
+  .main__title {
+    font-size: 1.5em;
+  }
+  .header__title {
+    font-size: 2em;
+  }
+  .burger-menu {
+    display: none;
+  }
+  .header__nav {
+    display: block;
+  }
+
+}
+
+.header {
+  background-color: #ad66d5;
+  padding: 10px;
+}
+
+.burger-menu {
+  width: 50px;
+  margin-bottom: 20px;
+  height: 50px;
+  position: relative;
+}
+
+/* прячем флажок чекбокса */
+#burger {
+  display: none;
+}
+
+label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 60;
+  cursor: pointer;
+}
+
+.burger-menu__button {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 30;
+}
+
+.burger-menu__checkbox:hover {
+  opacity: 0.8;
+}
+
+.burger-menu__lines,
+.burger-menu__lines::before,
+.burger-menu__lines::after {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: gray;
+}
+
+.burger-menu__lines {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.burger-menu__lines::before,
+.burger-menu__lines::after {
+  content: '';
+  display: block;
+}
+
+.burger-menu__lines::before {
+  transform: translateY(-5px);
+}
+
+.burger-menu__lines::after {
+  transform: translateY(5px);
+}
+
+.burger-menu__nav {
+  /* padding-top: 10px; */
+  position: absolute;
+  top: 0;
+  left: -250px;
+  width: 200px;
+  z-index: 20;
+  display: flex;
+  flex-flow: column;
+  height: 150px;
+  background-color: white;
+  overflow-y: auto;
+  /* transition: left 0.5s ease-out; */
+
+}
+
+.burger-menu__item {
+  padding: 10px 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ad66d5;
+}
+
+.burger-menu__item:hover {
+  opacity: 0.8;
+}
+
+.burger-menu__checkbox:checked ~ .burger-menu__nav {
+  left: 0;
+  /* transform: translateX(200%); */
+}
+
+.burger-menu__checkbox:checked ~ .burger-menu__button .burger-menu__lines {
+  background-color: transparent;
+}
+
+.burger-menu__checkbox:checked ~ .burger-menu__button .burger-menu__lines::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.burger-menu__checkbox:checked ~ .burger-menu__button .burger-menu__lines::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+
+
+
+.main {
+  color: black;
+}
+
+.main__title {
+  color: #7109aa;
+ }
+
+.footer {
+  color: #ad66d5;
+  background-color: #48036f;
+}
